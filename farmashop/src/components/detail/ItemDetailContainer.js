@@ -35,7 +35,7 @@ useEffect(() => {
 },[])
 
 if(loading){
-    return <h2>cargandoo</h2>
+    return <h2>cargando</h2>
 
 }else {
     return(

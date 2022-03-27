@@ -15,13 +15,13 @@ const ItemCount = (props) => {
   // const{carrito, total, borrarProducto } = useContext(contexto)
 
 
-  const sumarPlato = () => {
+  const sumarItem = () => {
     if (estado < stock) {
       setEstado(estado + 1);
     }
   };
 
-  const restarPlato = () => {
+  const restarItem = () => {
     if (estado > 0) {
       setEstado(estado - 1);
     }
@@ -38,10 +38,10 @@ return (
     <div className="counter">
         <div className="contador">
         <div className="contador__inside">
-            <p>Platos pedidos:</p>
-            <button onClick={sumarPlato}>+</button>
+            <p>Elementos pedidos:</p>
+            <button onClick={sumarItem}>+</button>
             <h2 id="counter__count">{estado}</h2>
-            <button onClick={restarPlato}>-</button>
+            <button onClick={restarItem}>-</button>
         </div>
         <div className="contador__insideDos">
             <button onClick={agregarPedido}>Confirmar cantidad seleccionada</button>

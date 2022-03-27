@@ -10,6 +10,7 @@ const Cart = () => {
     const[cantidad, setCantidad] = useState(carrito[0].cantidad)
 
     const handleClick = () => {
+        if(cantidad > 0)
         setCantidad(cantidad - 1)
     }
 
@@ -37,7 +38,7 @@ const Cart = () => {
                 <div key={carrito[0].item.id}>
                     <img alt="imagen de producto" src={carrito[0].item.imagen}/>
                     <p>{carrito[0].item.nombre}</p>
-                    <p>{cantidad}</p>
+                    <p>Cantidad: {cantidad}</p>
                     <h3>Total : ${cantidad * carrito[0].item.precio}</h3>
                     <button onClick={agregarItem}>Agregar un elemento</button>
                     <button onClick={handleClick}>Borrar del carrito</button>
@@ -45,14 +46,18 @@ const Cart = () => {
                 </div>
             ))}
         </div>)
+    } else {
+        return (
+            <div>
+            <h2>No hay ningún elemento seleccionado</h2>
+            <Link to="/">Vovler a la tienda</Link>
+            </div>
+      )
     }
 
-    return (
-        <div>
-        <h2>No hay ningún elemento seleccionado</h2>
-        <Link to="/">Vovler a la tienda</Link>
-        </div>
-  )
+
+
+
 }
 
 export default Cart
