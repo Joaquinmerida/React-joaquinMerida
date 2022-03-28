@@ -8,7 +8,8 @@ const { Provider } = contexto
 const MiProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([])
-    const [total, setTotal] = useState(false)
+    const [cantidad, setCantidad] = useState(0)
+    const [total, setTotal] = useState(0)
 
 
 
@@ -16,9 +17,14 @@ const MiProvider = ({children}) => {
         setCarrito ([])
     }
 
+    const addItem = (producto,cantidad) => {
+      const copia = carrito.slice(0)
+    }
+
     const valorDelContexto = {
         carrito: carrito,
         total: total,
+        cantidad: cantidad
     }
 
 

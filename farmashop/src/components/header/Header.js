@@ -7,9 +7,7 @@ const Header = () => {
     <>
     <div>LOGO</div>
     <div className="navbar">
-        {/* <Link>link1</Link>
-        <Link>link2</Link>
-        <Link>link3</Link> */}
+        <Link to="/">Tienda</Link>
         </div>
     </>
   )

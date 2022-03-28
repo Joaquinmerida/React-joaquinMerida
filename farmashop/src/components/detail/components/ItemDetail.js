@@ -9,14 +9,18 @@ const ItemDetail = (props) => {
     const{carrito, total, borrarProducto } = useContext(contexto)
 
 
+
     const onAdd = (cantidad) => {
         let newItem = {}
         newItem['item'] = props.item[0]
         newItem['cantidad'] = cantidad
-        console.log(newItem)
+        newItem['id'] = props.item[0].id
         carrito.push(newItem)
+        console.log(newItem)
+
     }
 
+  console.log(carrito)
     console.log(props.item[0])
 
   return (
@@ -29,7 +33,6 @@ const ItemDetail = (props) => {
         <div>
         <p>Descripcion del objeto</p>
         <ItemCounter inicial={1} onAdd={onAdd} />
-        <Link to="/cart"></Link>
         </div>
     </div>
   )
