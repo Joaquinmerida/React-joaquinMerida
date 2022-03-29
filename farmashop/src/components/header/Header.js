@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CartWidget from './CartWidget'
 
 const Header = () => {
 
@@ -8,6 +9,7 @@ const Header = () => {
     <div>LOGO</div>
     <div className="navbar">
         <Link to="/">Tienda</Link>
+        <Link to="/menu/cart"><CartWidget /></Link>
         </div>
     </>
   )

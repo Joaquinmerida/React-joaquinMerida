@@ -1,48 +1,41 @@
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { contexto } from '../../context/CartContext'
 
 const Cart = () => {
 
-    const{carrito} = useContext(contexto)
+    const{carrito , total , limpiarCarrito, handleClear} = useContext(contexto)
 
-    const[cantidad, setCantidad] = useState(carrito[0].cantidad)
 
-    const handleClick = () => {
-        if(cantidad > 0)
-        setCantidad(cantidad - 1)
-        console.log(cantidad)
-    }
 
-    const handleClear = () => {
-        setCantidad(cantidad * 0)
-    }
-    
-    const agregarItem = () => {
-        if (cantidad < carrito[0].item.stock){
-        setCantidad(cantidad + 1)}
-    }
-
-    console.log(cantidad)
-
+    if (carrito.length === 0) {     
+        return(
+            <div>
+                    <h1>No hay productos seleccionados</h1>
+                    <Link to="/">Volver a la tienda</Link>
+                </div>
+            )
+        }else {
         return(
             <div>
                 <h2>Carrito</h2>
                 {carrito.map(producto => (
-                    <div key={producto.item.id}>
-                        <img alt="imagen de producto" src={producto.item.imagen}/>
-                        <h3>{producto.item.nombre}</h3>
-                        <p>Cantidad: {cantidad}</p>
-                        <h3>Total parcial: ${cantidad * producto.item.precio}</h3>
-                        <button onClick={agregarItem}>Agregar un elemento</button>
-                        <button onClick={handleClick}>Borrar del carrito</button>
-                        <button onClick={handleClear}>Borrar todos los elementos</button>
+                    <div key={producto.id}>
+                        <img alt="imagen de producto" src={producto.imagen}/>
+                        <h3>{producto.nombre}</h3>
+                        <p>Cantidad: {producto.nuevaCantidad}</p>
+                        <h3>Total parcial: {producto.precio * producto.nuevaCantidad}</h3>
+                        <button onClick={handleClear} >Borrar elemento</button>
                     </div>
                 ))}
-            </div>)
-
-
-
-
+                <div>
+                <h2>Total a pagar: ${total}</h2>
+                <button onClick={limpiarCarrito}>Limpiar carrito</button>
+                </div>
+            </div>
+        )
+    }
 }
+
 
 export default Cart

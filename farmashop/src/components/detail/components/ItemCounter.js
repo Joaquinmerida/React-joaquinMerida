@@ -1,18 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { contexto } from "../context/CartContext";
-// import { useContext } from "react";
+import { useContext } from "react";
 
 
 const ItemCount = (props) => {
 
   const stock = 10;
-
   
   const [estado, setEstado] = useState(props.inicial);
-
-  // const{carrito, total, borrarProducto } = useContext(contexto)
 
 
   const sumarItem = () => {
