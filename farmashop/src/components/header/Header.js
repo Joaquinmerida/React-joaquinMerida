@@ -6,9 +6,9 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div>
+      <Link to="/">
         <img alt="logo" src="https://i.postimg.cc/VLPCypvz/kisspng-sacred-lotus-symbol-computer-icons-vector-graphics-studio-share-pueblo-5bab99fdb675c5-947626.png" className="logo"/>
-      </div>
+      </Link>
       <div className="header__nav">
         <Link to="/">Tienda</Link>
         <Link to="/menu/cart"><CartWidget /></Link>
