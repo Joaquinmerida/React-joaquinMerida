@@ -1,0 +1,240 @@
+body{
+    background-color: aliceblue;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+    height: 100vh;
+}
+#root{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.logo{
+height: 8rem;
+}
+
+.none{
+    color: rgba(204, 110, 204, 0.196);
+}
+
+.header{
+    display: flex;
+    height: 10rem;
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: start;
+    background-color: rgb(76, 28, 76);
+}
+
+.header__nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+    font-size: 2rem;
+    align-items: center;
+    color: rgba(224, 96, 224, 0.712);
+}
+
+.header__nav a{
+    color: rgb(204, 110, 204);
+}
+
+.productos{
+    width: 100%;
+    display: flex;
+}
+
+.producto{
+    border: 1px solid black;
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+.producto img {
+    width: 20rem;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.detail{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    background-color: whitesmoke;
+}
+
+.detail button {
+    background-color: rgb(76, 28, 76);
+    color: rgba(224, 96, 224, 0.712);
+    padding: 2% 2%;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.detail button:hover{
+    background-color: rgba(224, 96, 224, 0.712);
+    color: rgb(76, 28, 76);
+    border: rgb(76, 28, 76) 2px solid;
+    cursor: pointer;
+}
+
+.detail__imagen{
+    margin: 0 5%;
+}
+
+.detail__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.detail__text h2 {
+    font-size: 4rem;
+    margin: 1% 0;
+    color: rgb(76, 28, 76);
+}
+
+.detail__text h3 {
+    font-size: 2rem;
+    color: rgb(76, 28, 76);
+}
+
+.counter{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.counter__inside{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.counter__insideDos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.counter__insideDos button{
+    font-size: 1.4rem;
+    margin: 3% 0;
+}
+
+.carrito {
+    width: 80%;
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(76, 28, 76);
+}
+
+.producto__carrito{
+    width: 90%;
+    margin: 1%; 
+    background-color: rgba(245, 245, 245, 0.21);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+
+.producto__carrito button{
+    background-color: rgba(224, 96, 224, 0.712);
+    color: rgb(76, 28, 76);
+    padding: 2% 2%;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 2%;
+}
+
+.producto__carrito button:hover{
+    background-color: rgb(76, 28, 76);
+    color: rgba(224, 96, 224, 0.712);
+    border: rgb(76, 28, 76) 2px solid;
+    cursor: pointer;
+}
+
+.producto__carrito img{
+    margin: 0 5% 0 0;
+}
+
+.carrito__texto{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    
+}
+
+.carrito h2{
+    font-size: 3rem;
+    margin: 2% 0;
+    text-align: center;
+    color: white;
+    text-shadow: black 4px 2px;
+}
+
+.carrito__total{
+    width: 100%;
+    text-align: center;
+}
+
+.carrito__total h2{
+    color: rgb(204, 110, 204);
+    text-shadow: black 3px 2px 2px;
+}
+
+.carrito__total button {
+    background-color: rgba(224, 96, 224, 0.712);
+    color: rgb(76, 28, 76);
+    padding: 2% 2%;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 2%;
+}
+
+.carrito__total button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgba(224, 96, 224, 0.712);
+    border: rgb(76, 28, 76) 2px solid;
+    cursor: pointer;
+}
+
+.carrito__empty{
+    font-size: 2rem;
+    color: rgb(76, 28, 76);
+    text-align: center;
+}
+
+.carrito__empty span{
+    font-size: 10rem;
+}
+
+
+.footer{
+    align-self: flex-end;
+    background-color: rgb(76, 28, 76);
+    width: 100%;
+    color: white;
+    text-align: center;
+}

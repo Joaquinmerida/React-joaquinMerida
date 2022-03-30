@@ -24,6 +24,13 @@ const MiProvider = ({children}) => {
   //   setCarrito(carrito.some((producto) => producto.id !== carrito))
   // }
 
+  const handleClear = (id) => {
+    const copiaCarrito = [...carrito];
+    const indexProd = carrito.findIndex(prod => prod.id ===id);
+    copiaCarrito.splice(indexProd, 1);
+    setCarrito(copiaCarrito)
+  }
+
     const limpiarCarrito = () => {
         setCarrito([])
     }
@@ -34,6 +41,7 @@ const MiProvider = ({children}) => {
         cantidad: cantidad,
         limpiarCarrito: limpiarCarrito,
         addItem: addItem,
+        handleClear: handleClear
     }
 
 

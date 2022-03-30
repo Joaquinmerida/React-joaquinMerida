@@ -5,13 +5,17 @@ import CartWidget from './CartWidget'
 const Header = () => {
 
   return (
-    <>
-    <div>LOGO</div>
-    <div className="navbar">
+    <div className="header">
+      <div>
+        <img alt="logo" src="https://i.postimg.cc/VLPCypvz/kisspng-sacred-lotus-symbol-computer-icons-vector-graphics-studio-share-pueblo-5bab99fdb675c5-947626.png" className="logo"/>
+      </div>
+      <div className="header__nav">
         <Link to="/">Tienda</Link>
         <Link to="/menu/cart"><CartWidget /></Link>
-        </div>
-    </>
+        <p>Categorias</p>
+        <p>Categorias</p>
+      </div>
+    </div>
   )
 }
 

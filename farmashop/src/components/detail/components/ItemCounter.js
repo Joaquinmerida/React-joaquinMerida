@@ -30,22 +30,18 @@ const ItemCount = (props) => {
 
 
 return (
-    <>
-    <div className="counter">
-        <div className="contador">
-        <div className="contador__inside">
+        <div className="counter">
+        <div className="counter__inside">
             <p>Elementos pedidos:</p>
             <button onClick={sumarItem}>+</button>
             <h2 id="counter__count">{estado}</h2>
             <button onClick={restarItem}>-</button>
         </div>
-        <div className="contador__insideDos">
+        <div className="counter__insideDos">
             <button onClick={agregarPedido}>Confirmar cantidad seleccionada</button>
             <Link to="/menu/cart">Finalizar compra</Link>
             </div>
         </div>
-    </div>
-    </>
   );
 };
 

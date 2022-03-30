@@ -18,13 +18,13 @@ const ItemDetail = (props) => {
 
 
   return (
-    <div>
-        <div>
+    <div className="detail">
+        <div className="detail__imagen">
         <img src={props.item[0].imagen} alt="imagen de producto" />
-        <h2>{props.item[0].nombre}</h2>
-        <p>${props.item[0].precio}</p>
         </div>
-        <div>
+        <div className="detail__text">
+        <h2>{props.item[0].nombre}</h2>
+        <h3>${props.item[0].precio}</h3>
         <p>Descripcion del objeto</p>
         <ItemCounter inicial={1} onAdd={onAdd} />
         </div>
