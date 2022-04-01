@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { db } from "../../firebase"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, where ,query } from "firebase/firestore"
 import ItemList from './components/ItemList'
+import { CircularProgress } from 'react-cssfx-loading/lib'
 
 
 const ItemListContainer = () => {
@@ -14,28 +15,49 @@ const ItemListContainer = () => {
 
     useEffect(() => {
     
-    const productosCollection = collection(db, "Stock")
-    const consult = getDocs(productosCollection) 
+        if (!idCategoria) {
+
+
+            
+            const productosCollection = collection(db, "Stock")
+            const consult = getDocs(productosCollection) 
+            
+            consult
+                .then(res => setProductos(res.docs.map(doc => doc.data())))
+                .catch(() => alert("errrorrrr"))
+                .finally(() => setLoading(false))
+
+            // .then((resultado) => {
+                //     const array_de_resultados = resultado.docs.map((doc) => {
+                //         return doc.data()})
+                //     setProductos(array_de_resultados)
+                //     setLoading(false)
+                //     })
+            }else{
+
+                console.log(idCategoria)
+
+                const productosCollection = collection(db, "Stock")
+                const filter = query(productosCollection,where("categoria", "==", idCategoria))
+                const consult = getDocs(filter)
+
+                
+                consult
+                    .then(res=> setProductos(res.docs.map(doc=>doc.data())))
+                    .catch((error) => { console.log("error")})
+                    .finally(() => setLoading(false))
+            }
     
-    
-    consult
-    .then((resultado) => {
-        const array_de_resultados = resultado.docs.map((doc) => {
-            return doc.data()
-        })
-    
-        setProductos(array_de_resultados)
-        setLoading(false)
-    
-        })
-    .catch(() => {
-        console.log("Error de carga de productos")
-    })
+
 }, [idCategoria])
 
 
 if(loading) {
-    return <h2>Cargando productos</h2>
+    return(
+    <div className="carga">
+        <h2>Cargando productos</h2>
+        <CircularProgress color="#e4aeff" width="150px" height="150px"/>
+    </div>)
 } else {
     return <ItemList productos={productos} />
 }

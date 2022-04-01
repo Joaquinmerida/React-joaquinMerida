@@ -20,13 +20,9 @@ const MiProvider = ({children}) => {
     setTotal(total + producto.precio * nuevaCantidad)
   }
 
-  // const handleClear = (id) => {
-  //   setCarrito(carrito.some((producto) => producto.id !== carrito))
-  // }
-
   const handleClear = (id) => {
     const copiaCarrito = [...carrito];
-    const indexProd = carrito.findIndex(prod => prod.id ===id);
+    const indexProd = carrito.findIndex(prod => prod.id === id);
     copiaCarrito.splice(indexProd, 1);
     setCarrito(copiaCarrito)
   }

@@ -44,6 +44,7 @@ padding: 2rem;
     color:  #e4aeff;
     font-size: 1.5rem;
     filter: brightness(0.8);
+    text-decoration: none;
 }
 
 .header__nav a:hover{
@@ -61,7 +62,7 @@ padding: 2rem;
 
 .producto{
     border: 1px solid #2a1435;
-    box-shadow: 2px 2px #2a1435;
+    box-shadow: 2px 2px #4c1c4c;
     text-align: center;
     padding: 1%;
     margin: 3% 1%;
@@ -74,10 +75,11 @@ padding: 2rem;
     background-color: white;
     border-radius: 10px;
     justify-content: center;
+    max-height: 30rem;
 }
 
 .producto:hover{
-    box-shadow: 1px 5px #2a1435;
+    box-shadow: 4px 10px #4c1c4c;
 }
 
 .producto h2{
@@ -186,7 +188,8 @@ padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #2a14358c;
+    background-color: rgba(255, 255, 255, 0.156);
+    padding: 1%;
 }
 
 .producto__carrito{
@@ -194,12 +197,9 @@ padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    border-top: #2a1435 solid 5px;
-    border-bottom: #2a1435 solid 5px;
-    border-left: #2a1435 solid 2px;
-    border-right: #2a1435 solid 2px;
-    background-color: #ffffff88;
-
+    border: #2a1435 solid 5px;
+    color: #2a1435;
+    background-color: #ffffff
 }
 
 .producto__carrito button{
@@ -214,9 +214,9 @@ padding: 2rem;
 }
 
 .producto__carrito button:hover{
-    background-color: rgb(76, 28, 76);
-    color: rgba(224, 96, 224, 0.712);
-    border: rgb(76, 28, 76) 2px solid;
+    background-color: #e4aeff;
+    color: #2a1435;
+    border: #2a1435 2px solid;
     cursor: pointer;
 }
 
@@ -237,14 +237,13 @@ padding: 2rem;
 .carrito h2{
     font-size: 3rem;
     margin: 2% 0;
-    text-align: center;
     color: #e4aeff;
     text-shadow: black 2px 2px;
 }
 
 .carrito__total{
     width: 100%;
-    text-align: center;
+    text-align: start;
 }
 
 .carrito__total h2{
@@ -279,6 +278,16 @@ padding: 2rem;
     font-size: 10rem;
 }
 
+.carga{
+    font-size: 2rem;
+    color: #e4aeff;
+    text-align: center;
+    align-items: center;
+}
+
+.carga a{
+    color: #e4aeff;
+}
 
 .footer{
     align-self: flex-end;
@@ -286,4 +295,12 @@ padding: 2rem;
     width: 100%;
     color: white;
     text-align: center;
+    padding: 1rem;
+}
+
+.footer a{
+    color: #e4aeff;
+    font-size: 1rem;
+    margin: 0 2%;
+    text-decoration: none;
 }
