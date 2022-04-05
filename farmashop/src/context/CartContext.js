@@ -1,3 +1,5 @@
+import { addDoc, collection, serverTimestamp, updateDoc } from '@firebase/firestore'
+import { db } from '../firebase'
 import { createContext , useState } from 'react'
 import Item from '../components/item/components/Item'
 
@@ -31,14 +33,16 @@ const MiProvider = ({children}) => {
         setCarrito([])
     }
 
+      
     const valorDelContexto = {
         carrito: carrito,
         total: total,
         cantidad: cantidad,
         limpiarCarrito: limpiarCarrito,
         addItem: addItem,
-        handleClear: handleClear
+        handleClear: handleClear,
     }
+
 
 
   return (
