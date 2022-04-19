@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import ItemCounter from './ItemCounter'
 import { useContext, useState } from 'react'
 import { contexto } from '../../../context/CartContext'
 
 const ItemDetail = (props) => {
 
-    const{carrito, addItem } = useContext(contexto)
+    const{ addItem } = useContext(contexto)
 
-    const [seleccionado,setSeleccionado] = useState(false)
+    const [ seleccionado , setSeleccionado ] = useState(false)
 
 
     const onAdd = (cantidadSeleccionada) => {
@@ -25,7 +24,7 @@ const ItemDetail = (props) => {
         <div className="detail__text">
         <h2>{props.item[0].nombre}</h2>
         <h3>${props.item[0].precio}</h3>
-        <p>Descripcion del objeto</p>
+        <p>{props.item[0].Descripcion}</p>
         <ItemCounter inicial={1} onAdd={onAdd} />
         </div>
     </div>

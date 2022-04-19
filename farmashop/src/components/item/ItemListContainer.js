@@ -4,6 +4,8 @@ import { db } from "../../firebase"
 import { collection, getDocs, where ,query } from "firebase/firestore"
 import ItemList from './components/ItemList'
 import { CircularProgress } from 'react-cssfx-loading/lib'
+import NavBar from '../header/NavBar'
+
 
 
 const ItemListContainer = () => {
@@ -16,9 +18,6 @@ const ItemListContainer = () => {
     useEffect(() => {
     
         if (!idCategoria) {
-
-
-            
             const productosCollection = collection(db, "Stock")
             const consult = getDocs(productosCollection) 
             
@@ -26,15 +25,7 @@ const ItemListContainer = () => {
                 .then(res => setProductos(res.docs.map(doc => doc.data())))
                 .catch(() => alert("errrorrrr"))
                 .finally(() => setLoading(false))
-
-            // .then((resultado) => {
-                //     const array_de_resultados = resultado.docs.map((doc) => {
-                //         return doc.data()})
-                //     setProductos(array_de_resultados)
-                //     setLoading(false)
-                //     })
             }else{
-
                 console.log(idCategoria)
 
                 const productosCollection = collection(db, "Stock")
@@ -47,10 +38,7 @@ const ItemListContainer = () => {
                     .catch((error) => { console.log("error")})
                     .finally(() => setLoading(false))
             }
-    
-
 }, [idCategoria])
-
 
 if(loading) {
     return(
@@ -59,10 +47,12 @@ if(loading) {
         <CircularProgress color="#e4aeff" width="150px" height="150px"/>
     </div>)
 } else {
-    return <ItemList productos={productos} />
+    return( <>
+    <NavBar />
+    <ItemList productos={productos} />
+    </>
+    )
 }
-
-
 }
 
 export default ItemListContainer

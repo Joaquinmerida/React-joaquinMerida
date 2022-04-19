@@ -9,7 +9,6 @@ const Cart = () => {
 
     const navigate = useNavigate()
 
-
     if (carrito.length === 0) {
         return (
             <div className="carga">
@@ -29,12 +28,13 @@ const Cart = () => {
                             <p>Cantidad: {producto.nuevaCantidad}</p>
                             <h3>Total parcial: {producto.precio * producto.nuevaCantidad}</h3>
                         </div>
-                        <button onClick={handleClear} >Borrar elemento</button>
+                        <button onClick={() => handleClear(producto.id)} >Borrar elemento</button>
                     </div>
                 ))}
                 <div className="carrito__total">
                     <h2>Total a pagar: ${total}</h2>
                     <button onClick={limpiarCarrito}>Limpiar carrito</button>
+                    <button onClick={() => navigate("/")}>Seguir comprando</button>
                     <button onClick={() => navigate("/menu/checkout")}>Terminar compra</button>
                 </div>
             </div>

@@ -4,11 +4,13 @@ import Cart from './components/cart/Cart';
 import Checkout from './components/cart/Checkout';
 import ItemDetailContainer from './components/detail/ItemDetailContainer';
 import ItemListContainer from './components/item/ItemListContainer';
+import Landing from './components/landing/Landing';
 
 const Main = () => {
   return (
     <div className="main">
         <Routes>
+            <Route path="/landing" element={<Landing/>} />
             <Route path="/" element={<ItemListContainer/>} />
             <Route path="/categoria/:idCategoria" element={<ItemListContainer/>} />
             <Route path="/producto/:id" element={<ItemDetailContainer/>} />

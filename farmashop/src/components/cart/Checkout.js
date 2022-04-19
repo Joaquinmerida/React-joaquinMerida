@@ -3,6 +3,7 @@ import { useState, useContext } from 'react'
 import { contexto } from '../../context/CartContext'
 import { serverTimestamp, addDoc, collection } from '@firebase/firestore'
 import { db } from '../../firebase'
+import { toast } from 'react-toastify'
 
 const Checkout = () => {
 
@@ -29,7 +30,11 @@ const Checkout = () => {
 
         const ordenesCollection = collection(db, "Ordenes")
         const pedido = addDoc(ordenesCollection, compra)
-        alert("Su compra ha sido realizada con exito!")
+        toast.success('Compra realizada con exito!',{
+            position: "bottom-right",
+            autoClose: 1500,
+            progress:false});
+        
 
         console.log(pedido)
 

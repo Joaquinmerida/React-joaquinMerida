@@ -35,6 +35,8 @@ useEffect(() => {
     })
 },[])
 
+
+
 if(loading){
     return (<div className="carga">
     <h2>Cargando productos</h2>
