@@ -5,6 +5,7 @@ import { db } from '../../firebase'
 import { collection, getDocs } from '@firebase/firestore'
 import ItemDetail from './components/ItemDetail'
 import { CircularProgress } from 'react-cssfx-loading/lib'
+import { toast } from 'react-toastify'
 
 
 
@@ -31,7 +32,7 @@ useEffect(() => {
     
         })
     .catch(() => {
-        console.log("Error de carga de productos")
+        toast.error("Error de carga de productos")
     })
 },[])
 

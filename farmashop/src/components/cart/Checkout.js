@@ -10,6 +10,8 @@ const Checkout = () => {
     const { carrito, total } = useContext(contexto)
     
         const [nombre, setNombre] = useState("")
+        const [email, setEmail] = useState("")
+        const [telefono, setTelefono] = useState("")
         const [direccion, setDireccion] = useState("")
         const [pago, setPago] = useState("")
 
@@ -21,6 +23,8 @@ const Checkout = () => {
             comprador: {
                 nombre: nombre,
                 direccion: direccion,
+                telefono: telefono,
+                email: email
             },
             items: carrito,
             date: serverTimestamp(),
@@ -40,10 +44,6 @@ const Checkout = () => {
 
     }
 
-    const handleChange = (event) => {
-        setPago(event.target.value)
-    }
-
 
     return (
         <div className="checkout">
@@ -60,10 +60,16 @@ const Checkout = () => {
                         onChange={(e) => setDireccion(e.target.value)}
                     />
                 </label><br/>
-                <select value={pago} onChange={handleChange}>
-                    <option value="credito">Credito</option>
-                    <option value="debito">Debito</option>
-                </select><br/>
+                <label>Telefono:
+                    <input type="text" value={telefono}
+                        onChange={(e) => setTelefono(e.target.value)}
+                    />
+                </label><br/>
+                <label>Email:
+                    <input type="text" value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label><br/>
                 <input type="submit" className="button"/>
             </form>
         </div>

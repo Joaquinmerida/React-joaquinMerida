@@ -14,7 +14,7 @@ const Main = () => {
             <Route path="/" element={<ItemListContainer/>} />
             <Route path="/categoria/:idCategoria" element={<ItemListContainer/>} />
             <Route path="/producto/:id" element={<ItemDetailContainer/>} />
-            <Route path="/menu/cart" element={<Cart/>} />
+            <Route path="/cart" element={<Cart/>} />
             <Route path="/menu/checkout" element={<Checkout/>} />
         </Routes>
     </div>

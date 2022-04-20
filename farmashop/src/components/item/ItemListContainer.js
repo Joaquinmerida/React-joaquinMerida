@@ -5,6 +5,9 @@ import { collection, getDocs, where ,query } from "firebase/firestore"
 import ItemList from './components/ItemList'
 import { CircularProgress } from 'react-cssfx-loading/lib'
 import NavBar from '../header/NavBar'
+import { toast } from 'react-toastify'
+
+
 
 
 
@@ -23,7 +26,7 @@ const ItemListContainer = () => {
             
             consult
                 .then(res => setProductos(res.docs.map(doc => doc.data())))
-                .catch(() => alert("errrorrrr"))
+                .catch(() => toast.error("Error de carga de productos"))
                 .finally(() => setLoading(false))
             }else{
                 console.log(idCategoria)
@@ -35,7 +38,7 @@ const ItemListContainer = () => {
                 
                 consult
                     .then(res=> setProductos(res.docs.map(doc=>doc.data())))
-                    .catch((error) => { console.log("error")})
+                    .catch((error) => toast.error("Error de carga de productos"))
                     .finally(() => setLoading(false))
             }
 }, [idCategoria])
